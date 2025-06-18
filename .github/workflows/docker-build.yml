@@ -22,7 +22,8 @@ jobs:
       - name: 🔧 Build da imagem Docker
         uses: docker/build-push-action@v5
         with:
-          context: .
+          context: ./docker-pipeline-example
+          file: ./docker-pipeline-example/Dockerfile
           push: true
           tags: ${{ secrets.DOCKER_USERNAME }}/meu_app_python:latest
 
